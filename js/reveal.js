@@ -868,6 +868,7 @@
 
 		if( config.postMessage ) {
 			window.addEventListener( 'message', function ( event ) {
+				console.log('got postMessage', event);
 				var data = event.data;
 
 				// Make sure we're dealing with JSON
@@ -3973,6 +3974,23 @@
 		var key;
 
 		// Custom key bindings for togglePause should be able to resume
+		config.keyboard = {
+			38 /* up */: function() {
+				var currentSlide = Reveal.getCurrentSlide();
+				var video = currentSlide.querySelector('video');
+				if (video) {
+					video.play();
+				}
+			},
+			40 /* down */: function() {
+				var currentSlide = Reveal.getCurrentSlide();
+				var video = currentSlide.querySelector('video');
+				if (video) {
+					video.pause();
+				}
+			}
+		};
+
 		if( typeof config.keyboard === 'object' ) {
 			for( key in config.keyboard ) {
 				if( config.keyboard[key] === 'togglePause' ) {

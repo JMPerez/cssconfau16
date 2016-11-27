@@ -804,13 +804,12 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 			Reveal.initialize({
 				keyboard: configKeyboard,
+transition: 'fade',
 
-				transition: 'fade',
+                               history: true,
+                               postMessageEvents: true,
 
-				history: true,
-				postMessageEvents: true,
-
-				controls: false,
+                               controls: false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [

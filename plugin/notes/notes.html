@@ -275,6 +275,7 @@
 				function setupKeyboard() {
 
 					document.addEventListener( 'keydown', function( event ) {
+						console.log('triggerKey', event);
 						currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'triggerKey', args: [ event.keyCode ] }), '*' );
 					} );
 
