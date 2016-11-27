@@ -29,7 +29,8 @@
 				<!-- intro -->
 				<section data-state="bg-title" data-background-image="assets/backgrounds/pattern-01.svg">
 					<h1 style="color:#333;padding:1em 0"><strong>Progressive</strong> image rendering</h1>
-					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#333">@jmperezperez</a></div>
+					<div class="twitter">José M. Pérez · Web dev at Spotify</div>
+					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#111">@jmperezperez</a></div>
 				</section>
 
 				<section>
@@ -39,20 +40,6 @@
 							<li>Images represent 2/3 of the bytes of pages</li>
 							<li>Image optimization</li>
 							<li>Responsive images</li>
-						</ul>
-					</aside>
-				</section>
-
-				<section>
-					<h1>Who am I?</h1>
-					<ul>
-						<li class="fragment">A web developer</li>
-					</ul>
-					<aside class="notes">
-						<ul>
-							<li><strong>I happen to work at Spotify</strong></li>
-							<li><strong>Real examples</strong> of what issues we have had</li>
-							<li><strong>Real sites</strong> doing fancy stuff</li>
 						</ul>
 					</aside>
 				</section>
@@ -80,27 +67,19 @@
 
 				<section>
 					<!-- example of hiding images on small viewports Hero image -->
-					<!-- https://open.spotify.com/track/3vWtNiug49addenxdTmDXf -->
-					<iframe id="open-iframe" height="600" width="100%" style="max-width:100%" src="https://open.spotify.com/track/3vWtNiug49addenxdTmDXf?noredir=1"></iframe>
+					<!-- https://open.spotify.com/track/4aebBr4JAihzJQR0CiIZJv?noredir=1 -->
+					<img src="assets/spotify-adele-hello-desktop.png" class="stretch" alt="Example of a background image on desktop" style="border:1px solid #333">
+				</section>
 
-					<input id="open-iframe-slider" type="range" style="width:100%" min="20" max="100" value="100">
-					<div class="width-slider">
-						<div class="width-slider-indicator"></div>
-					</div>
-					<script>
-					(function() {
-						var slider = document.querySelector('#open-iframe-slider');
-						var iframe = document.querySelector('#open-iframe');
-						slider.addEventListener('input', function(e) {
-							iframe.width = e.target.value + '%';
-						});
-					})();
-					</script>
+				<section>
+					<!-- example of hiding images on small viewports Hero image -->
+					<!-- https://open.spotify.com/track/4aebBr4JAihzJQR0CiIZJv?noredir=1 -->
+					<img src="assets/spotify-adele-hello-mobile.png" class="stretch" alt="Same background image is mostly hidden on mobile" style="border:1px solid #333">
 				</section>
 
 				<section data-markdown>
 					<script type="text/template">
-						## Wrong way of hiding
+						## Wrong way of hiding images (1/2)
 
 						```html
 						<img src="example.png">
@@ -121,17 +100,17 @@
 
 				<section data-markdown>
 					<script type="text/template">
-						## More wrong ways of hiding
+						## Wrong way of hiding images (2/2)
 
 						```html
 						<body>
-							<div class="section-1">
+							<section class="section-1">
 								<p>This is the current section</p>
 								<img src="example-1.png">
-							</div>
-							<div class="section-2 hidden">
+							</section>
+							<section class="section-2 hidden">
 								<p>This section might or might not be shown later</p>
-								<img src="example-2.png">
+								<section src="example-2.png">
 							</div>
 						</body>
 						```
@@ -227,7 +206,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section data-markdown>
 				<script type="text/template">
-					## 2nd issue: How do I lazy load?
+					## 2nd issue: Lazy loading
 				</script>
 
 				<aside class="notes">
@@ -240,18 +219,29 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 			<section data-markdown>
 				<script type="text/template">
-				### Alternative
+				### Alternative approach
 ```html
-<div class="image-profile lazy-loaded-image"
-		 data-src-600="image-600.jpg"
-		 data-src-64="image-64.jpg"></div>
+<div class="placeholder">
+  <div role="img" class="image-profile lazy-image"
+       data-src-600="image-600.jpg"
+       data-src-64="image-64.jpg">
+    <noscript>
+      <img src="image-600.jpg" alt="A description of my image" />
+    </noscript>
+  </div>
+</div>
 ```
-				- Not coupled with layout <!-- .element: class="fragment" -->
-				- Choose image based on available sizes and &lt;div&gt;s area <!-- .element: class="fragment" -->
-				- Decide when to request it <!-- .element: class="fragment" -->
+
+```css
+.lazy-image img { position: absolute; width: 100%; height: 100%; }
+.lazy-image { position: relative; }
+.image-profile { width: 200px; height: 200px; }
+```
+<!-- .element: class="fragment" -->
 				</script>
 				<aside class="notes">
 					<ul>
+						<li>(+): Not coupled with layout, choose image based on available sizes and &lt;div&gt;s area, decide when to request it.</li>
 						<li>Downsides: Browsers <strong>can't prefetch image</strong>.</li>
 						<li>Dependent on JS. But can use <strong>No script</strong></li>
 					</ul>
@@ -662,7 +652,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h3>How it works</h3>
-					<iframe scrolling='no' class="stretch" src='//codepen.io/jmperez/embed/rxxRRg/?height=525&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jmperez/pen/rxxRRg/'>Drawing SVGs - Spotify Logo</a> by José Manuel Pérez (<a href='http://codepen.io/jmperez'>@jmperez</a>) on <a href='http://codepen.io'>CodePen</a>.
+					<iframe scrolling='no' class="stretch" src='//codepen.io/jmperez/embed/rxxRRg/?height=525&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jmperez/pen/rxxRRg/'>Drawing SVGs - Spotify Logo</a> by José Manuel Pérez (<a href='http://codepen.io/jmperez'>@jmperez</a>) on <a href='http://codepen.io'>CodePen</a>.
 					</iframe>
 					<aside class="notes">
 						This can be applied directly to SVGs. However, the whole talk is focused on bitmap images, for which we don't have any SVG line unless we vectorize it.
@@ -694,18 +684,20 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section data-markdown>
 	    		<script type="text/template">
-						### How it works
+### How it works
 
-						1. Find edges with canny edge detector
-						2. Create lines
-						3. Use JS and SVG to animate
+1. Find edges with canny edge detector
+2. Create lines
+3. Use JS and SVG to animate
 
 ```html
-	<svg>
-		<polyline points="26,2 27,2 29,2 31,2 33,2 35,2 37,2 39,2 41,2 43,2 45,2 47,2 49,2 51,2 53,2 55,2 57,2 59,2 61,2 63,2 65,2 67,2 69,2 71,2 73,2 75,2 77,2 79,2 81,2 83,3 84,5 84,6..."></polyline>
-		...
-		<polyline points="88,2 89,2 91,2 93,2 95,2 97,2 99,2 101,2 103,2 105,2 107,2 109,2 111,2 113,2 115,2 117,2 119,2 121,2 123,2 125,2 127,2 129,2 131,2 133,2 135,2 137,2 139,2 141,2 143,2 145,2 147,3 147,5..."></polyline>
-	</svg>
+<svg>
+  <polyline points="51,1 61,1 61,2 56,4 56,3"/>
+  <polyline points="52,1 50,2 51,3 50,4 50,9 46,10 46,8 48,8 48,9"/>
+  <polyline points="61,4 61,5 58,6"/>
+  ...
+  <polyline points="62,58 61,59 61,60 50,62 50,61 51,61"/>
+</svg>
 ```
 		</script>
 		<div class="aside">
@@ -734,7 +726,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					</aside>
 				</section>
 				<section>
-					<h1><a href="https://www.spotify.com/jobs/">spotify.com/jobs</a></h1>
+					<h1><a href="https://www.spotify.com/jobs/" style="color:rgb(30, 215, 96)">spotify.com/jobs</a></h1>
 				</section>
 
 				<section data-state="bg-title" data-background-image="assets/backgrounds/pattern-03.svg">

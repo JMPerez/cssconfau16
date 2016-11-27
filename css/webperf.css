@@ -238,3 +238,7 @@ twitterwidget {
 .reveal blockquote {
   font-style: normal;
 }
+
+.reveal ol {
+  width: 100%;
+}
