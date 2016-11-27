@@ -234,3 +234,7 @@ twitterwidget {
 .reveal code {
   font-family: monospace, "Courier New", Courier;
 }
+
+.reveal blockquote {
+  font-style: normal;
+}
