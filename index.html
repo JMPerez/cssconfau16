@@ -315,10 +315,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Example</h2>
-					<video class="stretch" poster="assets/spotify/video-1-16228-poster.png">
+					<video loop class="stretch" poster="assets/spotify/video-1-16228-poster.png">
 						<source type="video/webm" src="assets/spotify/video-1-16228.webm" />
 						<source type="video/mp4" src="assets/spotify/video-1-16228.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 				</section>
 				<section>
 					<img src="assets/spotify/spotify-open-loading.jpg" class="stretch" style="border:0">
@@ -384,17 +385,19 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section>
-					<video autoplay class="stretch" poster="assets/google-arts-culture-poster.png">
+					<video loop class="stretch" poster="assets/google-arts-culture-poster.png">
 						<source type="video/webm" src="assets/google-arts-culture.webm" />
 						<source type="video/mp4" src="assets/google-arts-culture.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
-					<video autoplay class="stretch" poster="assets/google-image-search-poster.png">
+					<video loop class="stretch" poster="assets/google-image-search-poster.png">
 						<source type="video/webm" src="assets/google-image-search.webm" />
 						<source type="video/mp4" src="assets/google-image-search.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
@@ -406,10 +409,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Medium</h2>
-					<video autoplay class="stretch" poster="assets/medium-progressive-loading-poster.png">
+					<video loop class="stretch" poster="assets/medium-progressive-loading-poster.png">
 						<source type="video/webm" src="assets/medium-progressive-loading.webm" />
 						<source type="video/mp4" src="assets/medium-progressive-loading.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 					<aside class="notes">
 						- Also known as blur-up technique
 						- Also on some other sites like http://qz.com/
@@ -648,10 +652,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section data-background-color="#03aad6">
-					<video data-autoplay poster="assets/polygon-ps4-poster.png" class="stretch">
+					<video loop poster="assets/polygon-ps4-poster.png" class="stretch">
 						<source type="video/webm" src="assets/polygon-ps4.webm" />
 						<source type="video/mp4" src="assets/polygon-ps4.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="http://www.polygon.com/a/ps4-review">polygon.com/a/ps4-review</a></small></div>
 				</section>
 
@@ -677,10 +682,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h3>Drawing bitmap images</h3>
-					<video autoplay height="509" width="483" class="stretch" poster="assets/contour-poster.png">
+					<video loop height="509" width="483" class="stretch" poster="assets/contour-poster.png">
 						<source type="video/webm" src="assets/contour.webm" />
 						<source type="video/mp4" src="assets/contour.mp4" />
 					</video>
+					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="https://jmperezperez.com/contour/">jmperezperez.com/contour</a></small></div>
 				</section>
 
@@ -801,15 +807,12 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				}
 			};
 
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				keyboard: configKeyboard,
-transition: 'fade',
-
-                               history: true,
-                               postMessageEvents: true,
-
-                               controls: false,
-
+				transition: 'fade',
+				controls: false,
+				history: true,
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
@@ -818,6 +821,27 @@ transition: 'fade',
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+			Reveal.addEventListener( 'fragmentshown', function( event ) {
+				if ('videoPlay' in event.fragment.dataset) {
+					var currentSlide = Reveal.getCurrentSlide();
+					var video = currentSlide.querySelector('video');
+					if (video) {
+						video.play();
+					}
+				}
+			});
+
+			Reveal.addEventListener( 'fragmenthidden', function( event ) {
+				if ('videoPlay' in event.fragment.dataset) {
+					var currentSlide = Reveal.getCurrentSlide();
+					var video = currentSlide.querySelector('video');
+					if (video) {
+						video.pause();
+					}
+				}
+			});
+
 		</script>
 
 	</body>
