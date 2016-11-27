@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>Progressive Image Loading</title>
+		<title>Progressive Image Rendering</title>
+		<meta name="description" content="A talk at CSSConf Australia 206 on how to lazy load and use placeholders when requesting images." />
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/night.css">
@@ -28,28 +28,17 @@
 
 				<!-- intro -->
 				<section data-state="bg-title" data-background-image="assets/backgrounds/pattern-01.svg">
-					<h1 style="color:#333;padding:1em 0">Loading images <strong>progressively</strong></h1>
+					<h1 style="color:#333;padding:1em 0"><strong>Progressive</strong> image rendering</h1>
 					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#333">@jmperezperez</a></div>
 				</section>
 
-				<section class="simon-web-performance">
-					<h1>Previously on</h1>
-					<img src="assets/web-performance-logo.png" alt="Web Performance Logo">
-				</section>
-
-				<section data-state="simon-mosaic" class="simon-mosaic-container">
-					<div>
-						<img src="assets/simon/simon01.png">
-						<img src="assets/simon/simon02.png" class="fragment">
-						<img src="assets/simon/simon03.png" class="fragment">
-						<img src="assets/simon/simon04.png" class="fragment">
-						<div style="clear:both"></div>
-					</div>
+				<section>
+					<h1>Images on the web</h1>
 					<aside class="notes">
 						<ul>
-							<li>Simon Pieters told us about images, how they represent 2/3 of the bytes of pages, how we could use CSS and SVG to replace them
-							 and how to use responsive images through the picture element</li>
-							<li>I think the talk was great, and it's awesome to have the opportunity of listening from someone involved with the standards and the implementation in the browser.</li>
+							<li>Images represent 2/3 of the bytes of pages</li>
+							<li>Image optimization</li>
+							<li>Responsive images</li>
 						</ul>
 					</aside>
 				</section>
@@ -191,16 +180,6 @@
 					<div class="max-wrapper" style="background-color:#fff">
 						<img src="assets/max/max-cheese-bacon.jpg" style="box-shadow:none">
 					</div>
-				</section>
-
-				<section data-background-image="assets/spotify/spotify_2015_05.jpg" data-state="burst">
-					<h1>Best image format</h1>
-				</section>
-
-				<section data-background-image="assets/spotify/bursts-orig.png" data-background-size="90%" data-background-color="#fff">
-				</section>
-
-				<section data-background-image="assets/spotify/burst01.svg">
 				</section>
 
 				<section data-background-color="#185B68">
@@ -345,7 +324,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Example</h2>
-					<video data-autoplay src="assets/spotify/video-1-16228.mp4" poster="assets/spotify/video-1-16228-poster.png" class="stretch"/>
+					<video class="stretch" poster="assets/spotify/video-1-16228-poster.png">
+						<source type="video/webm" src="assets/spotify/video-1-16228.webm" />
+						<source type="video/mp4" src="assets/spotify/video-1-16228.mp4" />
+					</video>
 				</section>
 				<section>
 					<img src="assets/spotify/spotify-open-loading.jpg" class="stretch" style="border:0">
@@ -411,11 +393,17 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section>
-					<video data-autoplay src="assets/google-arts-culture.mov" poster="assets/google-arts-culture-poster.png" class="stretch"/>
+					<video autoplay class="stretch" poster="assets/google-arts-culture-poster.png">
+						<source type="video/webm" src="assets/google-arts-culture.webm" />
+						<source type="video/mp4" src="assets/google-arts-culture.mp4" />
+					</video>
 				</section>
 
 				<section>
-					<video data-autoplay src="assets/google-image-search.mov" poster="assets/google-image-search-poster.png" class="stretch"/>
+					<video autoplay class="stretch" poster="assets/google-image-search-poster.png">
+						<source type="video/webm" src="assets/google-image-search.webm" />
+						<source type="video/mp4" src="assets/google-image-search.mp4" />
+					</video>
 				</section>
 
 				<section>
@@ -427,7 +415,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Medium</h2>
-					<video data-autoplay src="assets/medium-progressive-loading.mp4" poster="assets/medium-progressive-loading-poster.png" class="stretch"/>
+					<video autoplay class="stretch" poster="assets/medium-progressive-loading-poster.png">
+						<source type="video/webm" src="assets/medium-progressive-loading.webm" />
+						<source type="video/mp4" src="assets/medium-progressive-loading.mp4" />
+					</video>
 					<aside class="notes">
 						- Also known as blur-up technique
 						- Also on some other sites like http://qz.com/
@@ -662,7 +653,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section data-background-color="#03aad6">
-					<video data-autoplay src="assets/polygon-ps4.mov" poster="assets/polygon-ps4-poster.png" class="stretch"/>
+					<video data-autoplay poster="assets/polygon-ps4-poster.png" class="stretch">
+						<source type="video/webm" src="assets/polygon-ps4.webm" />
+						<source type="video/mp4" src="assets/polygon-ps4.mp4" />
+					</video>
 					<div><small>Source: <a style="color:#eee" href="http://www.polygon.com/a/ps4-review">polygon.com/a/ps4-review</a></small></div>
 				</section>
 
@@ -689,7 +683,8 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				<section>
 					<h3>Drawing bitmap images</h3>
 					<video autoplay height="509" width="483" class="stretch" poster="assets/contour-poster.png">
-						<source data-src="assets/contour.mp4" type="video/mp4" />
+						<source type="video/webm" src="assets/contour.webm" />
+						<source type="video/mp4" src="assets/contour.mp4" />
 					</video>
 					<div><small>Source: <a style="color:#eee" href="https://jmperezperez.com/contour/">jmperezperez.com/contour</a></small></div>
 				</section>
@@ -760,11 +755,62 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 		<script src="js/reveal.js"></script>
 
 		<script>
+		/*console.log('binding');
+		document.addEventListener('keydown', function(e) {
+			console.log(e);
+			switch(e.keyCode) {
+				// k, up
+				case 75: case 38:
+					var currentSlide = document.querySelector('section.present');
+					if (currentSlide) {
+						var video = currentSlide.querySelector('video');
+						if (video) {
+							video.play();
+						}
+					}
+					break;
+				// j, down
+				case 74: case 40:
+					var currentSlide = document.querySelector('section.present');
+					if (currentSlide) {
+						var video = currentSlide.querySelector('video');
+						if (video) {
+							video.pause();
+						}
+					}
+					break;
+			}
+		});*/
+		</script>
+
+		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
+			var configKeyboard = {
+				38 /* up */: function() {
+					var currentSlide = Reveal.getCurrentSlide();
+					var video = currentSlide.querySelector('video');
+					if (video) {
+						video.play();
+					}
+				},
+				40 /* down */: function() {
+					var currentSlide = Reveal.getCurrentSlide();
+					var video = currentSlide.querySelector('video');
+					if (video) {
+						video.pause();
+					}
+				}
+			};
+
 			Reveal.initialize({
+				keyboard: configKeyboard,
+
 				transition: 'fade',
-				controls: false,
+
 				history: true,
+				postMessageEvents: true,
+
+				controls: false,
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
