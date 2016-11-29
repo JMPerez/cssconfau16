@@ -28,7 +28,8 @@
 
 				<!-- intro -->
 				<section data-state="bg-title" data-background-image="assets/backgrounds/pattern-01.svg">
-					<h1 style="color:#333;padding:1em 0"><strong>Progressive</strong> image rendering</h1>
+					<h1 style="color:#333;padding:1em 0 0"><strong>Progressive</strong> image rendering</h1>
+					<h2 style="text-align:center;color:#333;font-size:80%;padding-bottom:3em;font-weight:bold">CSSConf AU 2016</h2>
 					<div class="twitter">José M. Pérez · Web dev at Spotify</div>
 					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#111">@jmperezperez</a></div>
 					<aside class="notes">
@@ -136,7 +137,8 @@
 				</section>
 
 				<section class="optimisation">
-					<h1>Optimising images</h1>
+					<h1>Optimise your images</h1>
+					<h2 class="fragment" style="text-align:center;padding-top:1em">really</h2>
 					<aside class="notes">
 						<ul>
 							<li>Less kilobytes != Improved perceived performance</li>
@@ -147,7 +149,7 @@
 						</ul>
 					</aside>
 				</section>
-
+				<!--
 				<section class="max">
 					<div class="max-wrapper" style="background-color:#fff">
 						<img src="assets/max/max-original.jpg" style="box-shadow:none">
@@ -160,9 +162,10 @@
 						<img src="assets/max/max-cheese-bacon.jpg" style="box-shadow:none">
 					</div>
 				</section>
+				-->
 
 				<section data-background-color="#185B68">
-					<h2>Picture element and srcset</h2>
+					<h2 style="padding-bottom:1em">Picture element and srcset</h2>
 					<svg font-size="6" role="img" viewBox="0 0 115 32" font-family="sans-serif" class="full" aria-label="The
 rotated phone shows a top part of an image of a kettlebell swing; the upright-held tablet shows a
 bit smaller images in two columns; the laptop shows images in three columns.">
@@ -193,7 +196,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section data-markdown>
     <script type="text/template">
-					## 1st issue: Breakpoints in HTML
+					## 1st issue: Keeping in sync markup and CSS
 
 ```html
 <img sizes="(max-width: 30em) 100vw,
@@ -283,7 +286,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 			<section data-markdown>
 				<script type="text/template">
-					## How to lazy load: IntersectionObserver FTW
+					## How to lazy load: IntersectionObserver
 
 					- Don't bind to the scroll event. Subscribe to an event triggered when the image enters the rendered area<!-- .element: class="fragment" -->
 					- Supported in Chrome, Opera. In development in Firefox and Edge.<!-- .element: class="fragment" -->
@@ -424,11 +427,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					<h2>How it's done</h2>
 					<img src="assets/medium-codepen.png" class="stretch"/>
 					<ol>
-						<li>Render div</li>
-						<li>Load small thumbnail</li>
-						<li>Draw image to &lt;canvas/&gt; and apply blur effect</li>
-						<li>Request large image</li>
-						<li>Render large image and hide &lt;canvas/&gt;</li>
+						<li class="fragment">Use &lt;div&gt; to render the image</li>
+						<li class="fragment">Request small thumbnail</li>
+						<li class="fragment">Draw thumbnail to &lt;canvas/&gt; and apply blur effect</li>
+						<li class="fragment">Request large image</li>
+						<li class="fragment">Render large image and hide &lt;canvas/&gt;</li>
 					</ol>
 				</section>
 
@@ -438,8 +441,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					```html
 					<figure>
 					  <div>
-					    <div/> <!-- this div keeps the aspect ratio so the placeholder doesn't collapse -->
-					    <img/> <!-- this is a tiny image with a resolution of e.g. ~27x17 and low quality -->
+					    <div/> <!-- this div keeps the aspect ratio so
+							        the placeholder doesn't collapse -->
+					    <img/> <!-- this is a tiny image with a small
+                resolution (e.g. ~27x17) and low quality -->
 					    <canvas/> <!-- takes the above image and applies a blur filter -->
 					    <img/> <!-- the large image to be displayed -->
 					    <noscript/> <!-- fallback for no JS -->
@@ -448,7 +453,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					```
 					</script>
 				</section>
-
+<!--
 				<section data-markdown>
 					<script type="text/template">
 					### Markup Overview
@@ -472,7 +477,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 						- http://csswizardry.com/2016/10/improving-perceived-performance-with-multiple-background-images/
 						- See also this pen http://codepen.io/wiiiiilllllll/pen/WGmJqJ/
 					</aside>
-				</section>
+				</section>-->
 
 				<section>
 					<h3>How do users perceive it?</h3>
