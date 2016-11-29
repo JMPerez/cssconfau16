@@ -31,15 +31,21 @@
 					<h1 style="color:#333;padding:1em 0"><strong>Progressive</strong> image rendering</h1>
 					<div class="twitter">José M. Pérez · Web dev at Spotify</div>
 					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#111">@jmperezperez</a></div>
+					<aside class="notes">
+						<ul>
+							<li>Why images are important</li>
+							<li>What we can do to reduce their impact</li>
+							<li>Myself</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
 					<h1>Images on the web</h1>
 					<aside class="notes">
 						<ul>
+							<li>Engage in discussions on JS/CSS</li>
 							<li>Images represent 2/3 of the bytes of pages</li>
-							<li>Image optimization</li>
-							<li>Responsive images</li>
 						</ul>
 					</aside>
 				</section>
@@ -60,7 +66,10 @@
 					<div></div>
 					<aside class="notes">
 						<ul>
-							<li>Flat design and minimalistic vs border-radius, gradients, etc.</li>
+							<li>Flat design and minimalistic</li>
+							<li>Rounded corners, gradients, shadows.</li>
+							<li>Embrace it?</li>
+							<li>Fewer images in repo</li>
 						</ul>
 					</aside>
 				</section>
@@ -82,7 +91,7 @@
 						## Wrong way of hiding images (1/2)
 
 						```html
-						<img src="example.png">
+						<img src="example.png"> <!-- it'll be requested -->
 						```
 
 						```css
@@ -110,7 +119,7 @@
 							</section>
 							<section class="section-2 hidden">
 								<p>This section might or might not be shown later</p>
-								<section src="example-2.png">
+								<img src="example-2.png"> <!-- it'll be requested -->
 							</div>
 						</body>
 						```
@@ -216,7 +225,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 						<li>The good thing about doing it yourself is that it gives you fine tuning on when to load images. You can decide when to trigger the request, and what image you want to load. You can implement your own “responsive images” approach, choosing an image according to, for instance, available space.</li>
 				</aside>
 			</section>
-
+<!--
 			<section data-markdown>
 				<script type="text/template">
 				### Alternative approach
@@ -236,9 +245,9 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 .lazy-image img { position: absolute; width: 100%; height: 100%; }
 .lazy-image { position: relative; }
 .image-profile { width: 200px; height: 200px; }
-```
+```-->
 <!-- .element: class="fragment" -->
-				</script>
+		<!--		</script>
 				<aside class="notes">
 					<ul>
 						<li>(+): Not coupled with layout, choose image based on available sizes and &lt;div&gt;s area, decide when to request it.</li>
@@ -247,7 +256,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					</ul>
 				</aside>
 			</section>
-
+-->
 			<section data-background-color="#111111">
 				<div style="height:650px">
 					<h3 style="float:left;display:inline-block;width:50%;padding:5em 0">Combine <i>regular</i> images and lazy-loaded ones</h3>
@@ -294,8 +303,8 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</aside>
 			</section>
 
-				<section data-state="image-loading">
-					<h1>What to show while content is loading</h1>
+				<section data-background-color="#524c5a">
+					<h1>What to show while the image is loading</h1>
 					<aside class="notes">
 						<ul>
 							<li><strong>Hero images and Text on images</strong></li>
@@ -303,7 +312,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					</aside>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>Example</h2>
 					<video loop class="stretch" poster="assets/spotify/video-1-16228-poster.png">
 						<source type="video/webm" src="assets/spotify/video-1-16228.webm" />
@@ -316,7 +325,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					<aside class="notes">
 						Having icons loaded as part of a webfont can backfire.
 					</aside>
-				</section>
+				</section>-->
 
 				<section>
 					<h3>Alternatives</h3>
@@ -510,10 +519,12 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					</div>
 				</section>
 
+				<!--
 				<section>
 					<h3>What effect does it have on RSS Readers and bots?</h3>
 					<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/Medium">@Medium</a> your weird blurry image thing means that when I read an article offline from my Safari Reading List, I don’t get any images 😞</p>&mdash; Brad Dougherty (@bdougherty) <a href="https://twitter.com/bdougherty/status/662775130968473601">November 6, 2015</a></blockquote>
 				</section>
+				-->
 				<!--
 				More tweets
 				https://twitter.com/SaraSoueidan/status/747533141959544832
@@ -522,7 +533,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				<section class="fixed-header">
 					<div class="fixed-header-wrapper">
 						<header>
-							<h3>Facebook</h3>
+							<h3>Facebook - Inlining thumbnail image in payload</h3>
 						</header>
 						<main style="flex-direction: column;">
 							<img src="assets/facebook/preview-photos-graphql.jpg" style="width: 70%">
@@ -540,7 +551,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				<section class="fixed-header">
 					<div class="fixed-header-wrapper">
 						<header>
-							<h3>Facebook</h3>
+							<h3>Facebook - Inlining thumbnail image in payload</h3>
 						</header>
 						<main>
 							<blockquote><p>
@@ -552,7 +563,7 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				<section class="fixed-header">
 					<div class="fixed-header-wrapper">
 						<header>
-							<h3>Facebook</h3>
+							<h3>Facebook - Inlining thumbnail image in payload</h3>
 						</header>
 						<main style="flex-direction: column;">
 							<div style="height:200px">
@@ -654,6 +665,8 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					<h3>How it works</h3>
 					<iframe scrolling='no' class="stretch" src='//codepen.io/jmperez/embed/rxxRRg/?height=525&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jmperez/pen/rxxRRg/'>Drawing SVGs - Spotify Logo</a> by José Manuel Pérez (<a href='http://codepen.io/jmperez'>@jmperez</a>) on <a href='http://codepen.io'>CodePen</a>.
 					</iframe>
+					<div data-reload-iframe class="fragment"></div>
+					<div><small>More info: <a href="https://jakearchibald.com/2013/animated-line-drawing-svg/">jakearchibald.com/2013/animated-line-drawing-svg</a></small></div>
 					<aside class="notes">
 						This can be applied directly to SVGs. However, the whole talk is focused on bitmap images, for which we don't have any SVG line unless we vectorize it.
 
@@ -679,9 +692,9 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="https://jmperezperez.com/contour/">jmperezperez.com/contour</a></small></div>
 				</section>
-
-				<section data-background-iframe="ext-slides/contour/index.html">
-				</section> -->
+			-->
+				<section data-background-iframe="ext-slides/contour2/index.html">
+				</section>
 
 				<!--<span class="presentation-header"><span class="presentation-header-author">José Pérez</span> <span class="presentation-header-title">Progressive image rendering</span></span>-->
 
@@ -824,6 +837,14 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					var video = currentSlide.querySelector('video');
 					if (video) {
 						video.play();
+					}
+				}
+
+				if ('reloadIframe' in event.fragment.dataset) {
+					var currentSlide = Reveal.getCurrentSlide();
+					var iframe = currentSlide.querySelector('iframe');
+					if (iframe) {
+						iframe.src = iframe.src;
 					}
 				}
 			});
