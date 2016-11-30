@@ -155,20 +155,6 @@
 						</ul>
 					</aside>
 				</section>
-				<!--
-				<section class="max">
-					<div class="max-wrapper" style="background-color:#fff">
-						<img src="assets/max/max-original.jpg" style="box-shadow:none">
-					</div>
-
-				</section>
-
-				<section class="max">
-					<div class="max-wrapper" style="background-color:#fff">
-						<img src="assets/max/max-cheese-bacon.jpg" style="box-shadow:none">
-					</div>
-				</section>
-				-->
 
 				<section data-background-color="#185B68">
 					<h2 style="padding-bottom:1em">Picture element and srcset</h2>
@@ -234,42 +220,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 						<li>The good thing about doing it yourself is that it gives you fine tuning on when to load images. You can decide when to trigger the request, and what image you want to load. You can implement your own “responsive images” approach, choosing an image according to, for instance, available space.</li>
 				</aside>
 			</section>
-<!--
-			<section data-markdown>
-				<script type="text/template">
-				### Alternative approach
-```html
-<div class="placeholder">
-  <div role="img" class="image-profile lazy-image"
-       data-src-600="image-600.jpg"
-       data-src-64="image-64.jpg">
-    <noscript>
-      <img src="image-600.jpg" alt="A description of my image" />
-    </noscript>
-  </div>
-</div>
-```
 
-```css
-.lazy-image img { position: absolute; width: 100%; height: 100%; }
-.lazy-image { position: relative; }
-.image-profile { width: 200px; height: 200px; }
-```-->
-<!-- .element: class="fragment" -->
-		<!--		</script>
-				<aside class="notes">
-					<ul>
-						<li>(+): Not coupled with layout, choose image based on available sizes and &lt;div&gt;s area, decide when to request it.</li>
-						<li>Downsides: Browsers <strong>can't prefetch image</strong>.</li>
-						<li>Dependent on JS. But can use <strong>No script</strong></li>
-					</ul>
-				</aside>
-			</section>
--->
-			<section data-background-color="#111111">
+			<section data-background-color="#444444">
 				<div style="height:650px">
 					<h3 style="float:left;display:inline-block;width:50%;padding:5em 0">Combine <i>regular</i> images and lazy-loaded ones</h3>
-					<img src="assets/spotify/open-pages-structure.png" class="stretch" style="border:0; background-color:#111;float:right;display:inline-block;height:100%"/>
+					<img src="assets/spotify/open-pages-structure.png" class="stretch" style="border:0; background-color: transparent;float:right;display:inline-block;height:100%"/>
 				</div>
 			</section>
 
@@ -320,21 +275,6 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 						</ul>
 					</aside>
 				</section>
-
-				<!-- <section>
-					<h2>Example</h2>
-					<video loop class="stretch" poster="assets/spotify/video-1-16228-poster.png">
-						<source type="video/webm" src="assets/spotify/video-1-16228.webm" />
-						<source type="video/mp4" src="assets/spotify/video-1-16228.mp4" />
-					</video>
-					<div data-video-play class="fragment"></div>
-				</section>
-				<section>
-					<img src="assets/spotify/spotify-open-loading.jpg" class="stretch" style="border:0">
-					<aside class="notes">
-						Having icons loaded as part of a webfont can backfire.
-					</aside>
-				</section>-->
 
 				<section>
 					<h3>Alternatives</h3>
@@ -393,19 +333,17 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section>
-					<video loop class="stretch" poster="assets/google-arts-culture-poster.png">
+					<video loop autoplay controls class="stretch" poster="assets/google-arts-culture-poster.jpg">
 						<source type="video/webm" src="assets/google-arts-culture.webm" />
 						<source type="video/mp4" src="assets/google-arts-culture.mp4" />
 					</video>
-					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
-					<video loop class="stretch" poster="assets/google-image-search-poster.png">
+					<video loop autoplay controls class="stretch" poster="assets/google-image-search-poster.jpg">
 						<source type="video/webm" src="assets/google-image-search.webm" />
 						<source type="video/mp4" src="assets/google-image-search.mp4" />
 					</video>
-					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
@@ -417,11 +355,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Medium</h2>
-					<video loop class="stretch" poster="assets/medium-progressive-loading-poster.png">
+					<video loop autoplay controls class="stretch" poster="assets/medium-progressive-loading-poster.png">
 						<source type="video/webm" src="assets/medium-progressive-loading.webm" />
 						<source type="video/mp4" src="assets/medium-progressive-loading.mp4" />
 					</video>
-					<div data-video-play class="fragment"></div>
 					<aside class="notes">
 						- Also known as blur-up technique
 						- Also on some other sites like http://qz.com/
@@ -459,31 +396,6 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					```
 					</script>
 				</section>
-<!--
-				<section data-markdown>
-					<script type="text/template">
-					### Markup Overview
-					```html
-					<figure name="7012" id="7012" class="graf--figure graf--layoutFillWidth graf-after--h4">
-					  <div class="aspectRatioPlaceholder is-locked">
-					    <div class="aspect-ratio-fill" style="padding-bottom: 66.7%;"></div>
-					    <div class="progressiveMedia js-progressiveMedia graf-image is-canvasLoaded is-imageLoaded" data-image-id="1*sg-uLNm73whmdOgKlrQdZA.jpeg" data-width="2000" data-height="1333" data-scroll="native">
-					      <img src="https://cdn-images-1.medium.com/freeze/max/27/1*sg-uLNm73whmdOgKlrQdZA.jpeg?q=20" crossorigin="anonymous" class="progressiveMedia-thumbnail js-progressiveMedia-thumbnail">
-					      <canvas class="progressiveMedia-canvas js-progressiveMedia-canvas" width="75" height="47"></canvas>
-					      <img class="progressiveMedia-image js-progressiveMedia-image __web-inspector-hide-shortcut__" data-src="https://cdn-images-1.medium.com/max/1800/1*sg-uLNm73whmdOgKlrQdZA.jpeg">
-					      <noscript class="js-progressiveMedia-inner">&lt;img class="progressiveMedia-noscript js-progressiveMedia-inner" src="https://cdn-images-1.medium.com/max/1800/1*sg-uLNm73whmdOgKlrQdZA.jpeg"&gt;</noscript>
-					    </div>
-					  </div>
-					</figure>
-					```
-					</script>
-					<aside class="notes">
-						- Images could be inlined using data URIs
-						- Blur effect can be achieved using CSS3 and also SVG filters
-						- http://csswizardry.com/2016/10/improving-perceived-performance-with-multiple-background-images/
-						- See also this pen http://codepen.io/wiiiiilllllll/pen/WGmJqJ/
-					</aside>
-				</section>-->
 
 				<section>
 					<h3>How do users perceive it?</h3>
@@ -667,11 +579,10 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section data-background-color="#03aad6">
-					<video loop poster="assets/polygon-ps4-poster.png" class="stretch">
+					<video loop autoplay controls poster="assets/polygon-ps4-poster.jpg" class="stretch">
 						<source type="video/webm" src="assets/polygon-ps4.webm" />
 						<source type="video/mp4" src="assets/polygon-ps4.mp4" />
 					</video>
-					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="http://www.polygon.com/a/ps4-review">polygon.com/a/ps4-review</a></small></div>
 				</section>
 
@@ -679,7 +590,6 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					<h3>How it works</h3>
 					<iframe scrolling='no' class="stretch" src='//codepen.io/jmperez/embed/rxxRRg/?height=525&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/jmperez/pen/rxxRRg/'>Drawing SVGs - Spotify Logo</a> by José Manuel Pérez (<a href='http://codepen.io/jmperez'>@jmperez</a>) on <a href='http://codepen.io'>CodePen</a>.
 					</iframe>
-					<div data-reload-iframe class="fragment"></div>
 					<div><small>More info: <a href="https://jakearchibald.com/2013/animated-line-drawing-svg/">jakearchibald.com/2013/animated-line-drawing-svg</a></small></div>
 					<aside class="notes">
 						This can be applied directly to SVGs. However, the whole talk is focused on bitmap images, for which we don't have any SVG line unless we vectorize it.
@@ -690,27 +600,15 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h3>Drawing bitmap images</h3>
-					<img src="assets/canny.png" class="stretch"/>
+					<img src="assets/canny.jpg" class="stretch"/>
 					<p>Canny Edge Detector</p>
 					<aside class="notes">
 						- No need to vectorize an image
 					</aside>
 				</section>
 
-				<!-- <section>
-					<h3>Drawing bitmap images</h3>
-					<video loop height="509" width="483" class="stretch" poster="assets/contour-poster.png">
-						<source type="video/webm" src="assets/contour.webm" />
-						<source type="video/mp4" src="assets/contour.mp4" />
-					</video>
-					<div data-video-play class="fragment"></div>
-					<div><small>Source: <a style="color:#eee" href="https://jmperezperez.com/contour/">jmperezperez.com/contour</a></small></div>
-				</section>
-			-->
 				<section data-background-iframe="ext-slides/contour2/index.html">
 				</section>
-
-				<!--<span class="presentation-header"><span class="presentation-header-author">José Pérez</span> <span class="presentation-header-title">Progressive image rendering</span></span>-->
 
 				<section data-markdown>
 	    		<script type="text/template">
@@ -756,83 +654,25 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 							<li>Never stop exploring and experimenting.</li>
 					</aside>
 				</section>
-				<!--<section>
+
+				<section>
 					<h2 style="text-align:center"><a href="https://www.spotify.com/jobs/" style="color:rgb(30, 215, 96)">spotify.com/jobs</a></h2>
-				</section>-->
+				</section>
 
 				<section data-state="thanks" data-background-iframe="thanks.html">
 					<h1 style="color:#eee;padding:0.2em 0;margin:0">Thanks!</h1>
 					<div class="twitter"><a href="https://twitter.com/jmperezperez" style="color:#eee">@jmperezperez</a></div>
 				</section>
-				<!-- before looking into image loading techniques -->
-				<!-- <section>
-					<h1>Before studying image loading techniques</h1>
-				</section>
-				<section>
-					<h1>Do we need an image?</h1>
-					<img src="assets/bg-menu-box-rt-corner.gif">
-				</section>
-				<section>
-					Minimalist and Flat design
-					<img src="assets/minimalist.png">
-				</section>-->
+
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
+		<script src="js/reveal-min.js"></script>
 		<script>
-		/*console.log('binding');
-		document.addEventListener('keydown', function(e) {
-			console.log(e);
-			switch(e.keyCode) {
-				// k, up
-				case 75: case 38:
-					var currentSlide = document.querySelector('section.present');
-					if (currentSlide) {
-						var video = currentSlide.querySelector('video');
-						if (video) {
-							video.play();
-						}
-					}
-					break;
-				// j, down
-				case 74: case 40:
-					var currentSlide = document.querySelector('section.present');
-					if (currentSlide) {
-						var video = currentSlide.querySelector('video');
-						if (video) {
-							video.pause();
-						}
-					}
-					break;
-			}
-		});*/
-		</script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			var configKeyboard = {
-				38 /* up */: function() {
-					var currentSlide = Reveal.getCurrentSlide();
-					var video = currentSlide.querySelector('video');
-					if (video) {
-						video.play();
-					}
-				},
-				40 /* down */: function() {
-					var currentSlide = Reveal.getCurrentSlide();
-					var video = currentSlide.querySelector('video');
-					if (video) {
-						video.pause();
-					}
-				}
-			};
 
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				keyboard: configKeyboard,
 				transition: 'fade',
 				controls: false,
 				history: true,
@@ -843,34 +683,6 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
-			});
-
-			Reveal.addEventListener( 'fragmentshown', function( event ) {
-				if ('videoPlay' in event.fragment.dataset) {
-					var currentSlide = Reveal.getCurrentSlide();
-					var video = currentSlide.querySelector('video');
-					if (video) {
-						video.play();
-					}
-				}
-
-				if ('reloadIframe' in event.fragment.dataset) {
-					var currentSlide = Reveal.getCurrentSlide();
-					var iframe = currentSlide.querySelector('iframe');
-					if (iframe) {
-						iframe.src = iframe.src;
-					}
-				}
-			});
-
-			Reveal.addEventListener( 'fragmenthidden', function( event ) {
-				if ('videoPlay' in event.fragment.dataset) {
-					var currentSlide = Reveal.getCurrentSlide();
-					var video = currentSlide.querySelector('video');
-					if (video) {
-						video.pause();
-					}
-				}
 			});
 
 		</script>

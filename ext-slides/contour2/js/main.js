@@ -208,6 +208,8 @@
     }, 2500);
   }
 
+  nextFile();
+/*
   function checkIfActive() {
     var present = window.parent.document.querySelector('.slides .present');
     if (window.parent.Reveal) {
@@ -219,5 +221,5 @@
     }
     setTimeout(checkIfActive, 1000);
   }
-  checkIfActive();
+  checkIfActive(); */
 })();

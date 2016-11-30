@@ -338,7 +338,50 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h3>Alternatives</h3>
-					<img src="assets/placeholders.png" alt="Different alternatives for placeholders" style="border:0">
+					<div class="placeholder-wrapper" style="height:300px">
+						<div class="placeholder placeholder-empty fragment">
+							<div class="placeholder-label"></div>
+						</div>
+						<div class="placeholder placeholder-icon fragment">
+							<div class="placeholder-label">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 							width="311.541px" height="311.541px" viewBox="0 0 311.541 311.541" xml:space="preserve"
+									style="fill: #666; width: 100%;">
+									<g>
+										<g>
+											<path d="M155.771,26.331C69.74,26.331,0,96.071,0,182.102c0,37.488,13.25,71.883,35.314,98.761
+												c3.404-27.256,30.627-50.308,68.8-61.225c13.946,12.994,31.96,20.878,51.656,20.878c19.233,0,36.894-7.487,50.698-19.936
+												c38.503,11.871,65.141,36.27,66.017,64.63c24.284-27.472,39.056-63.555,39.056-103.108
+												C311.541,96.071,241.801,26.331,155.771,26.331z M155.771,222.069c-9.944,0-19.314-2.732-27.634-7.464
+												c-20.05-11.409-33.855-34.756-33.855-61.711c0-38.143,27.583-69.176,61.489-69.176c33.909,0,61.489,31.033,61.489,69.176
+												c0,27.369-14.237,51.004-34.786,62.215C174.379,219.523,165.346,222.069,155.771,222.069z"/>
+										</g>
+									</g>
+								</svg>
+							</div>
+						</div>
+						<div class="fragment">
+							<div class="placeholder placeholder-solid">
+								<div class="placeholder-label"></div>
+							</div>
+							<div class="swatches">
+			            <div class="swatch" style="background-color: rgb(20, 59, 51)"></div>
+			            <div class="swatch" style="background-color: rgb(210, 208, 207)"></div>
+			            <div class="swatch" style="background-color: rgb(149, 75, 54)"></div>
+			            <div class="swatch" style="background-color: rgb(195, 111, 77)"></div>
+			            <div class="swatch" style="background-color: rgb(202, 129, 111)"></div>
+			            <div class="swatch" style="background-color: rgb(227, 157, 133)"></div>
+			            <div class="swatch" style="background-color: rgb(128, 133, 130)"></div>
+			            <div class="swatch" style="background-color: rgb(209, 160, 154)"></div>
+			            <div class="swatch" style="background-color: rgb(82, 161, 152)"></div>
+			        </div>
+						</div>
+						<div class="placeholder placeholder-blur fragment">
+							<div class="placeholder-label">
+								<img src="assets/avatar.png">
+							</div>
+						</div>
+					</div>
 				</section>
 
 				<section data-background-color="#8C0F04">
@@ -350,13 +393,19 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section>
-					<!-- <video data-autoplay src="assets/google-arts-culture.mov" class="stretch"/> -->
-					<img src="assets/google-arts-culture-poster.png" class="stretch" style="border:0">
+					<video loop class="stretch" poster="assets/google-arts-culture-poster.png">
+						<source type="video/webm" src="assets/google-arts-culture.webm" />
+						<source type="video/mp4" src="assets/google-arts-culture.mp4" />
+					</video>
+					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
-					<!-- <video data-autoplay src="assets/google-image-search.mov" class="stretch"/> -->
-					<img src="assets/google-image-search-poster.png" class="stretch"> style="border:0"
+					<video loop class="stretch" poster="assets/google-image-search-poster.png">
+						<source type="video/webm" src="assets/google-image-search.webm" />
+						<source type="video/mp4" src="assets/google-image-search.mp4" />
+					</video>
+					<div data-video-play class="fragment"></div>
 				</section>
 
 				<section>
@@ -368,15 +417,17 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 
 				<section>
 					<h2>Medium</h2>
-					<!--<video data-autoplay src="assets/medium-progressive-loading.mp4" class="stretch"/>-->
-					<img src="assets/medium-progressive-loading-poster.png" class="stretch" style="border:0">
+					<video loop class="stretch" poster="assets/medium-progressive-loading-poster.png">
+						<source type="video/webm" src="assets/medium-progressive-loading.webm" />
+						<source type="video/mp4" src="assets/medium-progressive-loading.mp4" />
+					</video>
+					<div data-video-play class="fragment"></div>
 					<aside class="notes">
 						- Also known as blur-up technique
 						- Also on some other sites like http://qz.com/
 						- Noticeable in slower networks
 					</aside>
 				</section>
-
 
 				<section>
 					<h2>How it's done</h2>
@@ -616,9 +667,11 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 				</section>
 
 				<section data-background-color="#03aad6">
-					<!-- todo: add example of xbox / ps4 -->
-					<!-- <video data-autoplay src="assets/polygon-ps4.mov" class="stretch"></video> -->
-					<img src="assets/polygon-ps4-poster.png" class="stretch">
+					<video loop poster="assets/polygon-ps4-poster.png" class="stretch">
+						<source type="video/webm" src="assets/polygon-ps4.webm" />
+						<source type="video/mp4" src="assets/polygon-ps4.mp4" />
+					</video>
+					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="http://www.polygon.com/a/ps4-review">polygon.com/a/ps4-review</a></small></div>
 				</section>
 
@@ -644,13 +697,17 @@ bit smaller images in two columns; the laptop shows images in three columns.">
 					</aside>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Drawing bitmap images</h3>
-					<!-- <video controls height="509" width="483" class="stretch" poster="assets/contour-poster.png">
-						<source data-src="assets/contour.mp4" type="video/mp4" />
-					</video> -->
-					<img src="assets/contour-poster.png" class="stretch">
+					<video loop height="509" width="483" class="stretch" poster="assets/contour-poster.png">
+						<source type="video/webm" src="assets/contour.webm" />
+						<source type="video/mp4" src="assets/contour.mp4" />
+					</video>
+					<div data-video-play class="fragment"></div>
 					<div><small>Source: <a style="color:#eee" href="https://jmperezperez.com/contour/">jmperezperez.com/contour</a></small></div>
+				</section>
+			-->
+				<section data-background-iframe="ext-slides/contour2/index.html">
 				</section>
 
 				<!--<span class="presentation-header"><span class="presentation-header-author">José Pérez</span> <span class="presentation-header-title">Progressive image rendering</span></span>-->
